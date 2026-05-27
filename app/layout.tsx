@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Consultorio de Heridas Complicadas · Taxco, Guerrero",
+  title: "Consultorio de Heridas Complicadas · Iguala, Guerrero",
   description:
     "Enfermero especialista en heridas complejas y podología clínica en Taxco de Alarcón. Pie diabético, úlceras venosas, onicocriptosis y más. Material estéril, atención a domicilio.",
   keywords: [
