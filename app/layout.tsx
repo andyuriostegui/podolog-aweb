@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Consultorio de Heridas Complicadas" }],
   creator: "Consultorio de Heridas Complicadas",
   openGraph: {
-    title: "Consultorio de Heridas Complicadas · Taxco, Guerrero",
+    title: "Consultorio de Heridas Complicadas · Iguala, Guerrero",
     description:
       "Especialistas en heridas de difícil manejo y podología clínica. Material avanzado, protocolos clínicos y atención a domicilio.",
     url: "https://podolog-aweb.vercel.app",
