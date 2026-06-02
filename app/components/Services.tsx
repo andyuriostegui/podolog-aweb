@@ -31,7 +31,7 @@ const SERVICES = [
     num: "03",
     title: "Ortopodología",
     desc: "Plantillas personalizadas, corrección postural y análisis biomecánico del pie para el alivio del dolor crónico y prevención de lesiones.",
-    img: "/podo3.jpg",
+    img: "",
     imgAlt: "Ortopodología y biomecánica",
     tags: ["Plantillas a medida", "Biomecánica", "Dolor crónico"],
   },

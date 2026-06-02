@@ -56,23 +56,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Stats */}
-            <div className="flex gap-8 mt-12 pt-8 border-t border-[#E8E6E0]">
-              {[
-                { num: "2,400+", label: "Pacientes atendidos" },
-                { num: "8 años", label: "Experiencia clínica" },
-                { num: "100%", label: "Material estéril" },
-              ].map(({ num, label }) => (
-                <div key={label}>
-                  <div className="font-['Playfair_Display',serif] text-[1.8rem] text-[#1a1a18] font-semibold leading-none">
-                    {num}
-                  </div>
-                  <div className="text-[0.72rem] text-[#9B9B8E] uppercase tracking-[0.08em] mt-1.5">
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Columna derecha — imagen */}

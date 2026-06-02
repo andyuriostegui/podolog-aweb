@@ -20,7 +20,7 @@ const CASES = [
     title: "Úlcera venosa en pierna",
     diagnosis: "Úlcera venosa crónica",
     desc: "Paciente femenina, 71 años. Úlcera de 8 meses en pierna izquierda. Hidrocoloides y terapia compresiva quincenal.",
-    pills: ["Hidrocoloides", "Electro Boral", "Alkacyme", "Terapia compresiva"],
+    pills: ["Hidrocoloides", "Electróbioral", "Alkacyme", "Terapia compresiva"],
     stat1: { value: "10 sem",       label: "Tiempo de cierre" },
     stat2: { value: "Sin recidiva", label: "A 6 meses"        },
     before: "/cases/case3.jpeg",
@@ -29,7 +29,7 @@ const CASES = [
   },
   {
     num: "Caso 03",
-    title: "Onicocriptosis bilateral",
+    title: " larvaterapia ",
     diagnosis: "Uña encarnada · Grado II",
     desc: "Paciente masculino, 29 años. Infección recurrente en ambos pulgares. Matricectomía parcial con asepsia estricta.",
     pills: ["Matricectomía parcial", "Material desechable", "Seguimiento 4 sem"],

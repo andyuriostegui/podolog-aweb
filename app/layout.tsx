@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "úlceras venosas",
     "curación de heridas",
     "enfermero especialista heridas",
-    "podólogo Taxco Guerrero",
+    "podólogo Iguala Guerrero",
     "atención domiciliaria heridas",
   ],
   authors: [{ name: "Consultorio de Heridas Complicadas" }],
