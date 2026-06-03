@@ -1,7 +1,7 @@
 const MATERIAL = [
   "Alginato de calcio",
   "Aquacel Extra",
-  "Electro Boral antiséptico",
+  "Electróbioral antiséptico",
   "Alkacyme jabón enzimático",
   "Terapia larval",
   "Terapia de presión negativa",
@@ -31,7 +31,7 @@ const SERVICES = [
     num: "03",
     title: "Ortopodología",
     desc: "Plantillas personalizadas, corrección postural y análisis biomecánico del pie para el alivio del dolor crónico y prevención de lesiones.",
-    img: "",
+    img: "/podo3.jpg",
     imgAlt: "Ortopodología y biomecánica",
     tags: ["Plantillas a medida", "Biomecánica", "Dolor crónico"],
   },
@@ -42,7 +42,7 @@ export default function Services() {
     <section id="servicios" className="bg-[#FAFAF8] font-['DM_Sans',sans-serif]">
 
       {/* ── ENCABEZADO ── */}
-      <div className="text-center px-8 py-16 md:py-20 border-b border-[#E8E6E0]">
+      <div className="text-center px-6 py-12 md:py-20 border-b border-[#E8E6E0]">
         <div className="flex items-center justify-center gap-3 mb-4">
           <span className="block w-5 h-px bg-[#8B7355]" />
           <span className="text-[0.7rem] text-[#8B7355] tracking-[0.14em] uppercase font-medium">
@@ -50,20 +50,20 @@ export default function Services() {
           </span>
           <span className="block w-5 h-px bg-[#8B7355]" />
         </div>
-        <h2 className="font-['Playfair_Display',serif] text-[2.2rem] md:text-[2.6rem] font-semibold text-[#1a1a18] leading-[1.2] mb-4">
+        <h2 className="font-['Playfair_Display',serif] text-[1.9rem] md:text-[2.6rem] font-semibold text-[#1a1a18] leading-[1.2] mb-4">
           Atención especializada
           <br />
           para cada{" "}
           <em className="not-italic italic text-[#8B7355]">tipo de herida</em>
         </h2>
-        <p className="text-[0.9rem] text-[#9B9B8E] max-w-lg mx-auto leading-[1.7] font-light">
+        <p className="text-[0.88rem] text-[#9B9B8E] max-w-lg mx-auto leading-[1.7] font-light">
           Enfermero especialista en heridas con formación en podología clínica.
           Material avanzado y seguimiento real en cada caso.
         </p>
       </div>
 
       {/* ── GRID DE CARDS ── */}
-      <div className="grid md:grid-cols-3 divide-x divide-[#E8E6E0] border-b border-[#E8E6E0]">
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#E8E6E0] border-b border-[#E8E6E0]">
         {SERVICES.map(({ num, title, desc, img, imgAlt, tags }) => (
           <div key={num} className="group cursor-default overflow-hidden">
 
@@ -82,7 +82,7 @@ export default function Services() {
             </div>
 
             {/* Cuerpo */}
-            <div className="px-7 py-6 bg-[#FAFAF8] group-hover:bg-[#F5F2EA] transition-colors">
+            <div className="px-6 md:px-7 py-6 bg-[#FAFAF8] group-hover:bg-[#F5F2EA] transition-colors">
               <h3 className="font-['Playfair_Display',serif] text-[1.1rem] text-[#1a1a18] mb-2">
                 {title}
               </h3>
@@ -113,10 +113,10 @@ export default function Services() {
       </div>
 
       {/* ── FRANJA MATERIAL AVANZADO ── */}
-      <div className="bg-[#F5F2EA] border-b border-[#E8E6E0] px-8 md:px-16 py-10">
-        <div className="flex flex-col md:flex-row md:items-center gap-6">
+      <div className="bg-[#F5F2EA] border-b border-[#E8E6E0] px-6 md:px-16 py-8 md:py-10">
+        <div className="flex flex-col md:flex-row md:items-center gap-5 md:gap-6">
           <div className="md:w-56 flex-shrink-0">
-            <h4 className="font-['Playfair_Display',serif] text-[1.1rem] text-[#1a1a18] mb-1">
+            <h4 className="font-['Playfair_Display',serif] text-[1.05rem] text-[#1a1a18] mb-1">
               Material clínico avanzado
             </h4>
             <p className="text-[0.75rem] text-[#9B9B8E] font-light leading-relaxed">
@@ -138,8 +138,8 @@ export default function Services() {
       </div>
 
       {/* ── CTA FINAL ── */}
-      <div className="bg-[#1a1a18] px-8 md:px-16 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p className="font-['Playfair_Display',serif] text-[1.5rem] md:text-[1.7rem] text-[#FAFAF8] font-semibold leading-[1.3] text-center md:text-left">
+      <div className="bg-[#1a1a18] px-6 md:px-16 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 text-center md:text-left">
+        <p className="font-['Playfair_Display',serif] text-[1.3rem] md:text-[1.7rem] text-[#FAFAF8] font-semibold leading-[1.3]">
           ¿No sabes qué servicio necesitas?{" "}
           <em className="not-italic italic text-[#C4A97D]">Te orientamos sin costo.</em>
         </p>
@@ -147,7 +147,7 @@ export default function Services() {
           href="https://wa.me/527331099901?text=Hola,%20necesito%20orientación%20sobre%20qué%20servicio%20necesito"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 bg-[#FAFAF8] text-[#1a1a18] text-[0.76rem] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-[2px] hover:bg-[#F0EDE6] transition-colors whitespace-nowrap"
+          className="w-full md:w-auto flex-shrink-0 bg-[#FAFAF8] text-[#1a1a18] text-[0.76rem] tracking-[0.1em] uppercase font-medium px-8 py-3.5 rounded-[2px] hover:bg-[#F0EDE6] transition-colors"
         >
           Hablar con el especialista →
         </a>

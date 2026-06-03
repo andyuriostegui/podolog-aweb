@@ -29,15 +29,15 @@ const CASES = [
   },
   {
     num: "Caso 03",
-    title: " larvaterapia ",
-    diagnosis: "Uña encarnada · Grado II",
-    desc: "Paciente masculino, 29 años. Infección recurrente en ambos pulgares. Matricectomía parcial con asepsia estricta.",
-    pills: ["Matricectomía parcial", "Material desechable", "Seguimiento 4 sem"],
-    stat1: { value: "1 sesión", label: "Resolución"   },
-    stat2: { value: "0",        label: "Recurrencias" },
+    title: "Larvaterapia",
+    diagnosis: "Herida crónica · Desbridamiento biológico",
+    desc: "Aplicación de larvas estériles para desbridamiento de tejido necrótico. Técnica avanzada con resultados superiores al desbridamiento quirúrgico convencional.",
+    pills: ["Terapia larval", "Material estéril", "Seguimiento semanal"],
+    stat1: { value: "2 sem",  label: "Desbridamiento" },
+    stat2: { value: "100%",   label: "Tejido limpio"   },
     before: "/cases/case2.jpeg",
     after:  "/cases/case2-1.jpeg",
-    tab: "Caso 03 · Onicocriptosis",
+    tab: "Caso 03 · Larvaterapia",
   },
 ];
 
@@ -73,7 +73,7 @@ function CompareSlider({ before, after }: { before: string; after: string }) {
   return (
     <div
       ref={wrapRef}
-      className="relative w-full h-full min-h-[400px] overflow-hidden cursor-col-resize select-none bg-[#0e0e0e]"
+      className="relative w-full h-full min-h-[320px] sm:min-h-[400px] overflow-hidden cursor-col-resize select-none bg-[#0e0e0e]"
       onMouseDown={(e) => { dragging.current = true; move(e.clientX); }}
       onTouchStart={(e) => { dragging.current = true; move(e.touches[0].clientX); }}
     >
@@ -88,15 +88,18 @@ function CompareSlider({ before, after }: { before: string; after: string }) {
           draggable={false}
         />
       </div>
-      <span className="absolute top-4 left-4 z-10 text-[0.6rem] text-white/90 tracking-[0.15em] uppercase font-bold bg-black/40 backdrop-blur-sm px-3 py-1 rounded-[4px]">Antes</span>
-      <span className="absolute top-4 right-4 z-10 text-[0.6rem] text-white/90 tracking-[0.15em] uppercase font-bold bg-[#8B7355]/80 backdrop-blur-sm px-3 py-1 rounded-[4px]">Después</span>
-      <div className="absolute top-0 bottom-0 z-20 w-[2px] bg-white/80 shadow-[0_0_10px_rgba(0,0,0,0.5)]" style={{ left: `${pct}%`, transform: "translateX(-50%)" }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center gap-1 transition-transform hover:scale-110">
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="2.5" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="2.5" strokeLinecap="round"><path d="M9 18l6-6-6-6"/></svg>
+      <span className="absolute top-3 left-3 z-10 text-[0.58rem] text-white/90 tracking-[0.12em] uppercase font-bold bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-[3px]">Antes</span>
+      <span className="absolute top-3 right-3 z-10 text-[0.58rem] text-white/90 tracking-[0.12em] uppercase font-bold bg-[#8B7355]/80 backdrop-blur-sm px-2.5 py-1 rounded-[3px]">Después</span>
+      <div
+        className="absolute top-0 bottom-0 z-20 w-px bg-white/80"
+        style={{ left: `${pct}%`, transform: "translateX(-50%)" }}
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center gap-0.5">
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="2.5" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+          <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="2.5" strokeLinecap="round"><path d="M9 18l6-6-6-6"/></svg>
         </div>
       </div>
-      <p className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-[0.6rem] text-white/60 tracking-[0.1em] uppercase font-medium pointer-events-none whitespace-nowrap bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">← desliza →</p>
+      <p className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 text-[0.54rem] text-white/50 tracking-[0.08em] uppercase pointer-events-none whitespace-nowrap">← desliza →</p>
     </div>
   );
 }
@@ -104,22 +107,22 @@ function CompareSlider({ before, after }: { before: string; after: string }) {
 function BlurGate({ onReveal }: { onReveal: () => void }) {
   return (
     <div
-      className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 cursor-pointer transition-all hover:bg-black/50"
-      style={{ backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", background: "rgba(26,26,24,0.6)" }}
+      className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-2.5 cursor-pointer"
+      style={{ backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)", background: "rgba(26,26,24,0.55)" }}
       onClick={onReveal}
     >
-      <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-2">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FAFAF8" strokeWidth="1.8" strokeLinecap="round">
+      <div className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAFAF8" strokeWidth="1.8" strokeLinecap="round">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
           <circle cx="12" cy="12" r="3"/>
           <line x1="1" y1="1" x2="23" y2="23"/>
         </svg>
       </div>
-      <p className="font-['Playfair_Display',serif] text-[1.1rem] text-white font-semibold tracking-wide">Contenido médico</p>
-      <p className="text-[0.75rem] text-white/70 text-center max-w-[200px] leading-[1.5] font-light">
+      <p className="font-['Playfair_Display',serif] text-[0.95rem] text-white font-semibold">Contenido médico</p>
+      <p className="text-[0.7rem] text-white/55 text-center max-w-[180px] leading-[1.45] font-light">
         Imágenes clínicas reales de heridas y evolución.
       </p>
-      <button className="mt-2 bg-white text-[#1a1a18] text-[0.65rem] tracking-[0.15em] uppercase font-bold px-6 py-2.5 rounded-[4px] hover:scale-105 transition-transform">
+      <button className="mt-1 bg-white text-[#1a1a18] text-[0.62rem] tracking-[0.12em] uppercase font-bold px-5 py-2 rounded-[3px]">
         Ver caso clínico
       </button>
     </div>
@@ -134,126 +137,109 @@ export default function BeforeAfter() {
   const switchCase = (i: number) => { setActive(i); setBlurred(true); };
 
   return (
-    <section id="casos" className="bg-[#FAFAF8] font-['DM_Sans',sans-serif] py-16 md:py-24">
-      
-      {/* Contenedor central (El secreto del minimalismo) */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Encabezado */}
-        <div className="text-center mb-10">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="block w-8 h-px bg-[#8B7355]/40" />
-            <span className="text-[0.7rem] text-[#8B7355] tracking-[0.2em] uppercase font-bold">Evolución Clínica</span>
-            <span className="block w-8 h-px bg-[#8B7355]/40" />
-          </div>
-          <h2 className="font-['Playfair_Display',serif] text-[2.2rem] md:text-[3rem] font-semibold text-[#1a1a18] leading-[1.1] mb-4">
-            Casos de <em className="not-italic italic text-[#8B7355]">éxito</em>
-          </h2>
-          <p className="text-[0.9rem] text-[#6B6B60] font-light max-w-lg mx-auto">
-            Resultados reales de nuestros protocolos de enfermería avanzada. Desliza para ver la recuperación.
-          </p>
+    <section id="casos" className="bg-[#FAFAF8] font-['DM_Sans',sans-serif]">
+
+      {/* ── ENCABEZADO ── */}
+      <div className="text-center px-6 py-12 md:py-20 border-b border-[#E8E6E0]">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <span className="block w-5 h-px bg-[#8B7355]" />
+          <span className="text-[0.68rem] text-[#8B7355] tracking-[0.14em] uppercase font-medium">Evolución clínica</span>
+          <span className="block w-5 h-px bg-[#8B7355]" />
+        </div>
+        <h2 className="font-['Playfair_Display',serif] text-[1.9rem] md:text-[2.6rem] font-semibold text-[#1a1a18] leading-[1.2] mb-2">
+          Casos de <em className="not-italic italic text-[#8B7355]">éxito</em>
+        </h2>
+        <p className="text-[0.85rem] text-[#9B9B8E] font-light max-w-md mx-auto leading-relaxed">
+          Resultados reales de nuestros protocolos de enfermería avanzada. Desliza para ver la recuperación.
+        </p>
+      </div>
+
+      {/* ── TABS ── */}
+      <div className="flex overflow-x-auto border-b border-[#E8E6E0]">
+        {CASES.map((cas, i) => (
+          <button
+            key={i}
+            onClick={() => switchCase(i)}
+            className={`flex-1 min-w-[160px] px-4 py-3.5 text-[0.68rem] tracking-[0.08em] uppercase font-medium whitespace-nowrap border-b-2 transition-colors ${
+              active === i
+                ? "text-[#1a1a18] border-[#8B7355] bg-[#FAFAF8]"
+                : "text-[#9B9B8E] border-transparent hover:text-[#1a1a18]"
+            }`}
+          >
+            {cas.tab}
+          </button>
+        ))}
+      </div>
+
+      {/* ── GRID: slider + info ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 border-b border-[#E8E6E0]">
+
+        {/* Slider */}
+        <div className="relative border-b lg:border-b-0 lg:border-r border-[#E8E6E0]">
+          {blurred && <BlurGate onReveal={() => setBlurred(false)} />}
+          <CompareSlider before={c.before} after={c.after} />
         </div>
 
-        {/* Tarjeta contenedora de todo el interactivo */}
-        <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-[#E8E6E0] overflow-hidden">
-          
-          {/* Tabs */}
-          <div className="flex overflow-x-auto border-b border-[#E8E6E0] bg-[#FAFAF8]/50 scrollbar-hide">
-            {CASES.map((cas, i) => (
-              <button
-                key={i}
-                onClick={() => switchCase(i)}
-                className={`flex-1 min-w-[200px] px-6 py-4 text-[0.75rem] tracking-[0.1em] uppercase font-bold whitespace-nowrap border-b-2 transition-all ${
-                  active === i 
-                    ? "text-[#1a1a18] border-[#8B7355] bg-white" 
-                    : "text-[#9B9B8E] border-transparent hover:text-[#6B6B60] hover:bg-white/50"
-                }`}
-              >
-                {cas.tab}
-              </button>
-            ))}
+        {/* Panel info */}
+        <div className="flex flex-col justify-between p-7 sm:p-9 lg:p-10 bg-[#FAFAF8]">
+          <div className="flex flex-col gap-3">
+            <div>
+              <p className="text-[0.62rem] text-[#C4B89A] tracking-[0.14em] uppercase mb-1 font-medium">{c.num}</p>
+              <h3 className="font-['Playfair_Display',serif] text-[1.2rem] md:text-[1.4rem] text-[#1a1a18] leading-[1.3]">
+                {c.title}
+              </h3>
+            </div>
+            <span className="inline-block text-[0.62rem] text-[#8B7355] bg-[#F0EDE6] border border-[#D4C9B8] px-2.5 py-1 rounded-[2px] w-max">
+              {c.diagnosis}
+            </span>
+            <div className="h-px bg-[#E8E6E0]" />
+            <p className="text-[0.8rem] text-[#6B6B60] leading-[1.75] font-light">{c.desc}</p>
+            <div>
+              <p className="text-[0.6rem] text-[#9B9B8E] uppercase tracking-[0.1em] mb-2 font-medium">Protocolo · Material</p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.pills.map((p) => (
+                  <span key={p} className="text-[0.65rem] text-[#6B6B60] bg-[#F5F2EA] border border-[#E8E6E0] px-2.5 py-1 rounded-[2px]">{p}</span>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Grid Minimalista (Mitad y Mitad) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-
-            {/* Slider */}
-            <div className="relative w-full h-[350px] sm:h-[450px] lg:h-auto border-b lg:border-b-0 lg:border-r border-[#E8E6E0]">
-              {blurred && <BlurGate onReveal={() => setBlurred(false)} />}
-              <CompareSlider before={c.before} after={c.after} />
+          <div className="flex flex-col gap-3 mt-6 pt-6 border-t border-[#E8E6E0]">
+            <div className="grid grid-cols-2 gap-2.5">
+              {[c.stat1, c.stat2].map(({ value, label }) => (
+                <div key={label} className="bg-[#F5F2EA] px-3 py-2.5 rounded-[2px]">
+                  <p className="font-['Playfair_Display',serif] text-[1.1rem] text-[#1a1a18] font-semibold">{value}</p>
+                  <p className="text-[0.58rem] text-[#9B9B8E] uppercase tracking-[0.08em] mt-0.5">{label}</p>
+                </div>
+              ))}
             </div>
 
-            {/* Panel de Info - Con buen respiro (padding) */}
-            <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12 bg-white">
-              <div className="flex flex-col h-full justify-between">
-                
-                {/* Bloque Superior */}
-                <div>
-                  <p className="text-[0.7rem] text-[#C4B89A] tracking-[0.2em] uppercase mb-2 font-bold">{c.num}</p>
-                  <h3 className="font-['Playfair_Display',serif] text-[1.4rem] md:text-[1.6rem] text-[#1a1a18] leading-[1.3] mb-4">
-                    {c.title}
-                  </h3>
-                  
-                  <span className="inline-block text-[0.7rem] text-[#8B7355] bg-[#FAFAF8] border border-[#E8E6E0] px-3 py-1.5 rounded-[4px] font-semibold mb-6">
-                    {c.diagnosis}
-                  </span>
-                  
-                  <p className="text-[0.85rem] text-[#6B6B60] leading-[1.8] font-light mb-6">
-                    {c.desc}
-                  </p>
-                  
-                  <div>
-                    <p className="text-[0.65rem] text-[#9B9B8E] uppercase tracking-[0.15em] mb-3 font-bold">Protocolo / Material</p>
-                    <div className="flex flex-wrap gap-2">
-                      {c.pills.map((p) => (
-                        <span key={p} className="text-[0.7rem] text-[#1a1a18] bg-[#F5F2EA] px-3 py-1.5 rounded-[4px] font-medium">
-                          {p}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <button
+                onClick={() => setBlurred((b) => !b)}
+                className="flex items-center gap-1.5 text-[0.65rem] text-[#9B9B8E] hover:text-[#6B6B60] transition-colors"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                  {blurred
+                    ? <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></>
+                    : <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></>
+                  }
+                </svg>
+                {blurred ? "Revelar imágenes" : "Ocultar imágenes"}
+              </button>
 
-                {/* Bloque Inferior (Estadísticas y CTA) */}
-                <div className="mt-8 pt-8 border-t border-[#E8E6E0]">
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {[c.stat1, c.stat2].map(({ value, label }) => (
-                      <div key={label} className="bg-[#FAFAF8] border border-[#E8E6E0] px-4 py-3 rounded-[8px]">
-                        <p className="font-['Playfair_Display',serif] text-[1.2rem] text-[#1a1a18] font-semibold">{value}</p>
-                        <p className="text-[0.65rem] text-[#8B7355] uppercase tracking-[0.1em] mt-1 font-bold">{label}</p>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <button
-                      onClick={() => setBlurred((b) => !b)}
-                      className="flex items-center gap-2 text-[0.7rem] text-[#9B9B8E] hover:text-[#1a1a18] transition-colors font-bold uppercase tracking-[0.1em]"
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                        {blurred
-                          ? <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></>
-                          : <><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23"/></>
-                        }
-                      </svg>
-                      {blurred ? "Revelar imágenes" : "Ocultar imágenes"}
-                    </button>
-                    
-                    <a
-                      href="https://wa.me/521234567890?text=Hola,%20me%20interesa%20una%20valoración%20clínica"
-                      target="_blank" rel="noopener noreferrer"
-                      className="w-full sm:w-auto text-center text-[0.7rem] text-white bg-[#1a1a18] hover:bg-[#8B7355] tracking-[0.15em] uppercase font-bold px-6 py-3 rounded-[4px] transition-colors"
-                    >
-                      Agendar Cita
-                    </a>
-                  </div>
-                </div>
-
-              </div>
+              <a
+                href="https://wa.me/527331099901?text=Hola,%20vi%20los%20casos%20clínicos%20y%20me%20interesa%20una%20valoración"
+                target="_blank" rel="noopener noreferrer"
+                className="w-full sm:w-auto text-center bg-[#1a1a18] text-[#FAFAF8] text-[0.72rem] tracking-[0.1em] uppercase font-medium px-6 py-2.5 rounded-[2px] hover:bg-[#2e2e2b] transition-colors"
+              >
+                Agendar cita →
+              </a>
             </div>
           </div>
         </div>
       </div>
+
     </section>
   );
 }
